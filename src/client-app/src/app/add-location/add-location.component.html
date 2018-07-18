@@ -1,0 +1,84 @@
+<div class="container boss">
+  <!-- <div *ngIf="lat && lng">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClicked($event)">
+
+      <agm-marker [latitude]="lat" [longitude]="lng">
+        <agm-info-window>
+          <p>Bạn đang ở đây</p>
+        </agm-info-window>
+      </agm-marker>
+
+      <agm-marker [latitude]="setLat" [longitude]="setLng">
+        <agm-info-window>
+          <strong>{{setAddress}}</strong>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+  </div> -->
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-4">
+      <span>Name:</span>
+      <input autofocus type="text" id="tenquan" class="form-control" placeholder="Enter name.." required autofocus [(ngModel)]="tenQuan"
+        name="tenQuan">
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-4">
+      <span>Type:</span>
+      <select class="form-control" style="height: 38px;">
+        <option value="volvo">Restaurent</option>
+        <option value="saab">Store</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-4">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-4">
+      <span>Time Open:</span>
+      <input type="time" class="form-control" [(ngModel)]="stime" name="stime">
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+      <span>To:</span>
+      <input type="time" class="form-control" [(ngModel)]="etime" name="etime">
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4 text-center">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-4">
+      <span>Min Price:</span>
+      <input step="1000" type="number" min="0" class="form-control" [(ngModel)]="minprice" name="minprice">
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+      <span>Max Price:</span>
+      <input step="1000" type="number" min="0" class="form-control" [(ngModel)]="maxprice" name="maxprice">
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4 text-center">
+      <input style="margin-top:24px;" name="" type="file" (change)="onFileSelected($event)" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <p style="margin-top: 30px; margin-bottom:10px;">Detail </p>
+      <textarea style="width: 500px ; height:300px" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+      <button style="margin-top: 30px; margin-bottom: 30px" type="submit" class="btn btn-outline-primary" (click)="ngPostDataQuanAn(tenQuan, setAddress, stime, etime, setLat, setLng)">
+        <i class="fas fa-location-arrow"></i> Add new location</button>
+    </div>
+    <div style="margin-top: 32px" class="col-sm-12 col-md-6 col-lg-6">
+      <span>Address: </span>
+      <div class="form-group">
+        <input placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+          #search [formControl]="searchControl">
+
+      </div>
+      <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>

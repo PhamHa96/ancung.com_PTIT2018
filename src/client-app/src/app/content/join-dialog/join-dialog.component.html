@@ -1,0 +1,46 @@
+<div>
+    <!-- mat-dialog-title -->
+  <h2 style=" text-align: center;"  class="h2title">
+    <i class="fas fa-user-plus"></i>JOIN</h2>
+  <hr>
+  <mat-dialog-content>
+    <!-- *ngFor='let quan of quanAn' -->
+    <div *ngFor='let party of quanAn.party' class="form1 container">      
+      <div  class="row">
+        <div class="col-sm-12 title">
+          <h3>
+            <i class="fas fa-utensils"></i>{{party.title}}</h3>
+        </div>  
+        <div class="col-sm-6">
+          <label>Leader:</label>
+          <a>{{party.leader}} </a>
+          <br>
+          <label>Min prices</label> 30.000vnd
+          <br>
+          <label for="">Number join:</label> 3
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="col-sm-6">
+          <label>Number Max:</label> 3
+          <i class="fas fa-users"></i>
+          <br>
+          <label for="">Time: 3 </label>
+          <i class="far fa-clock"></i>
+          <br>
+          <label>Type:</label> open
+          <i class="fa fa-circle statut" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-success btnJoin">Join</button>
+        </div>
+      </div>
+    </div>
+    <!-- <strong>{{data}}</strong> -->
+  </mat-dialog-content>
+  <hr>
+  <mat-dialog-actions>
+    <button class="btn btn-danger btnClose" mat-button (click)="onCloseConfirm()">Close </button>
+  </mat-dialog-actions>
+</div>

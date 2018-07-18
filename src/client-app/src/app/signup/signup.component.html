@@ -1,0 +1,32 @@
+<div class="text-center">
+  <form class="form-signup">
+    <img class="mb-4" src="assets/logo.png" alt="" width="72" height="72">
+    <h3>ANCUNG.COM</h3>
+    <h1 class="h3 mb-3 font-weight-normal">Create a account</h1>
+    <div class="row">
+      <div class="col-xs-6 col-md-6">
+        <input class="form-control" name="firstname" placeholder="First Name" type="text" [(ngModel)]="fistName" name="fistName" required autofocus />
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <input class="form-control" name="lastname" placeholder="Last Name" type="text" [(ngModel)]="lastName" name="lastName" required />
+      </div>
+    </div>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" [(ngModel)]="email" name="email" required>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" [(ngModel)]="password" name="password" required>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+    
+    <label class="radio-inline">
+      <input type="radio" name="sex" id="inlineCheckbox1" value="male" [(ngModel)]="sex" name="optradio"/> Male
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="sex" id="inlineCheckbox2" value="female" [(ngModel)]="sex" name="optradio"/> Female
+    </label>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="signUp(fistName, lastName, email, password, confirmPassword, sex)">Sign Up</button>
+    <h4 class="mt-5 mb-3 text-muted">If you already have a account:</h4>
+    <button [routerLink]="['/login']" class="btn btn-lg btn-success btn-block" type="submit">Sign In</button>
+  </form>
+</div>

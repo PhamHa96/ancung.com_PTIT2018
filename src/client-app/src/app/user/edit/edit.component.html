@@ -1,0 +1,90 @@
+<form class="form-group" #formProfile="ngForm" (ngSubmit)="update(formProfile)">
+<div class="text-center">
+  <div *ngIf="dataUser">
+      <img class="image" *ngIf="dataUser.Image!=='' " src="assets/{{dataUser.Image}}" alt="" width="120" height="120">
+      <img class="image" *ngIf="dataUser.Image==='' " src="assets/images.png" alt="" width="120" height="120">
+      <img class="image" *ngIf="dataUser.Image!=='' " src="{{dataUser.Image}}" alt="" width="120" height="120">
+  </div>
+  
+  <div class="choose_file">
+    <span>Choose Avatar</span>
+    <input name="" type="file" (change)="onFileSelected($event)"/>
+  </div>
+</div>
+
+  <div class="info ">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-8 col-md-push-2">
+          <div class="row">
+
+            <div class="left col-md-6">
+              <p>Name:</p>
+            </div>
+            <div class="right col-md-6">
+              <input type="text" class="form-control" placeholder="Change name" required name="Name" ngModel="{{ dataUser.Name}}" [disabled]="!disable">
+            </div>
+            <div class="left col-md-6">
+              <p>Email:</p>
+            </div>
+            <div class="right col-md-6">
+              <input type="email" class="form-control" name="Email" ngModel="{{ dataUser.Email }}" [disabled]="!disable">
+            </div>
+            <div class="left col-md-6">
+              <p>Address:</p>
+            </div>
+            <div class="right col-md-6">
+              <input type="text" class="form-control" placeholder="Change address" required name="Address" ngModel="{{ dataUser.Address }}"
+                [disabled]="!disable">
+            </div>
+            <div class="left col-md-6">
+              <p>Phone:</p>
+            </div>
+            <div class="right col-md-6">
+              <input type="text" class="form-control" placeholder="Change phone" required name="Phone" ngModel="{{ dataUser.Phone }}" [disabled]="!disable">
+            </div>
+
+            <div class="left col-md-6">
+              <p>Sex:</p>
+            </div>
+            <div class="right col-md-6">
+              <select name="Sex" ngModel="{{dataUser.Sex}}" value="{{dataUser.Sex}}" class="form-control" [disabled]="!disable">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="left col-md-6">
+              <p>Birth day:</p>
+            </div>
+            <div class="right col-md-6">
+              <input type="date" class="form-control" placeholder="" required name="Birthday" ngModel="{{ dataUser.Birthday }}" [disabled]="!disable">
+            </div>
+            <div class="left col-md-6">
+              <p>Favorite Food:</p>
+            </div>
+            <div class="right col-md-6">
+              <input type="text" class="form-control" placeholder="Change..." required name="FavoriteFood" ngModel="{{ dataUser.FavoriteFood }}"
+                [disabled]="!disable">
+            </div>
+            <div class="left col-md-6">
+              <p>More detail:</p>
+            </div>
+            <div class="right col-md-6">
+              <input type="text" class="form-control" placeholder="Change..." required name="Detail" ngModel="{{ dataUser.Detail }}" [disabled]="!disable">
+            </div>
+            <div class="left col-md-6">
+              <button type="sunmit" class="btn btn-success" (click)="update()">Save Change</button>
+            </div>
+            <div class="right col-md-6">
+              <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- <pre>{{ formProfile.value | json }}</pre> -->

@@ -1,0 +1,62 @@
+<!-- <agm-map [latitude]="10.91601859333259" [longitude]="106.71650704288322" [zoom]="zoom">
+  </agm-map> -->
+
+<!-- <div *ngIf="lat && lng"> -->
+
+<!-- <agm-map [latitude]="10.91601859333259" [longitude]="106.71650704288322" [zoom]="zoom">
+    <agm-marker *ngFor= "let marker of quanAn" [latitude]="lat" [longitude]="lng">
+      <agm-info-window>
+        <p>Bạn đang ở đây</p>
+      </agm-info-window>
+    </agm-marker>
+
+    <agm-marker class="location" *ngFor= "let marker of quanAn"
+    [latitude]="marker.Lat" 
+    [longitude]="marker.Lng"
+    [iconUrl]="'assets/rsz_restaurant_marker.png'"
+    >
+
+      <agm-info-window>
+          <img src="assets/{{marker.Image}}" alt="" width="150" height="150">
+        <h2>{{marker.TenQuan}}</h2>
+        <p>--Địa chỉ--</p>
+        <p aria-placeholder="cái gì đó">Party: 3</p>
+        <button type="button" class="btn btn-danger" mat-raised-button (click)="openDialog()">Set party</button>
+        <button type="button" class="btn btn-success" mat-raised-button (click)="openJoinDialog(marker._id)">Join</button>
+      </agm-info-window>
+
+    </agm-marker>
+
+  </agm-map> -->
+
+
+<div class="container">
+  <div class="form-group">
+    <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+      #search [formControl]="searchControl">
+  </div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker [latitude]="latitude" [longitude]="longitude">
+      <agm-info-window>
+        This is info-window
+        <img src="https://www.mcdonalds.com/content/dam/usa/documents/mcdelivery/mcdelivery_new11.jpg" width="100px" height="100px">
+        <p style="font-size: 20px;">
+          <i class="fas fa-map-marker"></i> 323/3 Nguyen Trãi , P.Ngyen Cu Trinh, HCM</p>
+        <p style="font-size: 20px;">
+          <i class="fas fa-mobile-alt"></i> 01673.123.4123</p>
+        <P class="time" class="adress" style="font-size: 20px;">
+          <i class="far fa-clock"></i> 11:00 - 17:00</P>
+        <p class="minmax" style="font-size: 20;">
+          <i class="fas fa-dollar-sign"></i>
+          <span style="font-size: 20px;">Min Price: 20.000vnd</span>
+          <span style="font-size: 20px; padding-left: 5%;">Max Price: 30.000vnd</span>
+        </p>
+        <div class="btn_flow">
+          <button style="width:95px" type="button" class="btn btn-danger" (click)="openDialog()">Set party</button>
+          <button type="button" class="btn btn-success" (click)="openJoinDialog(quan._id)">Join</button>
+        </div>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>
+<!-- <div> -->

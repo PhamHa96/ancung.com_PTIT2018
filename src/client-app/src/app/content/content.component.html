@@ -1,0 +1,53 @@
+<div class="body">
+  <!-- The video -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <span>Find</span>
+        <input type="text" id="find" class="form-control" placeholder="Search something.." required autofocus>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <span>Type</span>
+        <select class="form-control" style="height: 46px;">
+          <!-- <option *ngFor='let type of typeFood' value="{{type._id}}">{{type.Name}}</option> -->
+          <option value="">Ăn vặt</option>
+          <option value="">Vỉa hè</option>
+          <option value="">Nhà hàng</option>
+        </select>
+      </div>
+      <!-- <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>People join</span>
+        <input type="number" id="number" class="form-control" placeholder="Select number.." required>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>Time</span>
+        <span>From</span>
+        <input type="time" class="form-control" name="stime">
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>To</span>
+        <input type="time" class="form-control" name="etime">
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <span>Date</span>
+        <input type="date" class="form-control" placeholder="Select date.." name="bday">
+      </div> -->
+    </div>
+
+  </div>
+  <br>
+
+  <div class="text-center">
+    <button type="button" class="btn btn-danger">
+      <i class="fas fa-search"></i> Search</button>
+    <br>
+    <br>
+    <span style="margin-left: -20px;">or</span>
+    <button type="button" class="btn btn-outline-secondary">
+      <i class="fas fa-location-arrow"></i> Add new location</button>
+  </div>
+<br>
+</div>
+<div class="row">
+  <app-quanan></app-quanan>
+</div>
